@@ -22,7 +22,7 @@ sync.Map可以理解为类似一个map[interface{}]interface{}的结构，key可
 
 以上2种场景，相对于对普通的map加Mutex或者RWMutex来实现并发安全，使用sync.Map不用在业务代码里加锁，会大幅减少锁竞争，提升性能。**其它更为常见的场景还是使用普通的Map，搭配Mutex或者RWMutex来使用**。
 
-不能对sync.Map使用值传递方式进行函数调用。
+**不能对sync.Map使用值传递方式进行函数调用。**
 
 sync.Map结构体类型有如下几个方法：
 

@@ -30,9 +30,9 @@ add操作的`Addxxx`函数只支持`int32`, `int64`, `uint32`, `uint64`, `uintpt
 
 ### Value类型
 
-由于上面5种类型的原子操作只支持几种基本的数据类型，因此为了扩大原子操作的使用范围，Go团队在1.4版本的`sync/atomic`包中引入了一个新的类型`Value`。`Value`类型可以用来读取(Load)和修改(Store)**任意类型**的值。
+由于上面5种类型的原子操作只支持几种基本的数据类型，因此为了扩大原子操作的使用范围，Go团队在1.14版本的`sync/atomic`包中引入了一个新的类型`Value`。`Value`类型可以用来读取(Load)和修改(Store)**任意类型**的值。
 
-Go 1.4版本的`Value`类型只有`Load`和`Store`2个方法，Go 1.17版本又给`Value`类型新增了`CompareAndSwap`和`Swap`这2个新方法。
+Go 1.14版本的`Value`类型只有`Load`和`Store`2个方法，Go 1.17版本又给`Value`类型新增了`CompareAndSwap`和`Swap`这2个新方法。
 
 ## sync/atomic实践
 

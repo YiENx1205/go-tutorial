@@ -6,7 +6,7 @@
 
 Mutex是sync包里的一个结构体类型，含义就是互斥锁。Mutex变量的默认值或者说零值是一个没有加锁的mutex，也就是当前mutex的状态是unlocked。
 
-不要对Mutex使用值传递方式进行函数调用。
+**不要对Mutex使用值传递方式进行函数调用**。
 
 Mutex允许一个goroutine对其加锁，其它goroutine对其解锁，不要求加锁和解锁在同一个goroutine里。
 

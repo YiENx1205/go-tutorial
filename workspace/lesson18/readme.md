@@ -32,7 +32,8 @@
   }
   
   /* 实现接口interface_name里的方法method_name3
-  注意：下面用了指针接受者。函数可以使用值接受者或者指针接受者，上面的method_name1和method_name1使用的是值接受者。
+  注意：下面用了指针接受者。函数可以使用值接受者或者指针接受者，
+  上面的method_name1和method_name1使用的是值接受者。
   如果用了指针接受者，那给interface变量赋值的时候要传指针
   */
   func(struct_var *struct_name) method_name3([参数列表])[返回值列表] {
@@ -81,11 +82,13 @@
       animal.speak() // cat miaomiaomiao
       
       /*
-      因为Dog的speak方法用的是指针接受者，因此给interface赋值的时候，要赋指针
+      因为Dog的speak方法用的是指针接受者，
+      因此给interface赋值的时候，要赋指针
       */
       animal = &Dog{"caiquan", 2}
       animal.speak() // dog wangwangwang
   }
+  
   ```
 
 * struct结构体类型在实现interface里的所有方法时，关于interface变量赋值有2个点要**注意**
@@ -295,9 +298,9 @@
       
       import "fmt"
       
-      
       func main() {
-          // 定义一个map类型的变量，key是string类型，value是空接口类型
+          // 定义一个map类型的变量，key是string类型，
+          // value是空接口类型
           dict := make(map[string]interface{})
           // value可以是int类型
           dict["a"] = 1 
@@ -306,10 +309,11 @@
           // value可以是bool类型
           dict["c"] = true
           fmt.Println(dict) // map[a:1 b:b c:true]
-          fmt.Printf("type:%T, value:%v\n", dict["b"], dict["b"]) // type:string, value:b
+          fmt.Printf("type:%T, value:%v\n", dict["b"], dict["b"]) 
+          // type:string, value:b
       }
       ```
-
+      
       
 
   * x.(T)

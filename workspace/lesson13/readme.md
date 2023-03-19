@@ -39,7 +39,6 @@
     
     import "fmt"
     
-    
     func printSlice(param []int) {
         fmt.Printf("slice len:%d, cap:%d, value:%v\n", len(param), cap(param), param)
     }
@@ -51,7 +50,6 @@
         printSlice(slice2)
     }
     ```
-
     
 
 * 零值nil
@@ -121,7 +119,8 @@ import "reflect"
 
 
 func printSlice(param []int) {
-    fmt.Printf("param len:%d, cap:%d, value:%v\n", len(param), cap(param), param)
+    fmt.Printf("param len:%d, cap:%d, value:%v\n", 
+               len(param), cap(param), param)
 }
 
 func main() {
@@ -164,7 +163,7 @@ len()和cap()函数：类似C++的vector里的size和capacity
 * len()：获取切片的长度，也就是实际存储了多少个元素
 * cap(): 获取切片的容量。如果切片的元素个数要超过当前容量，会自动扩容
 
-append()：通过append函数给切片加元素
+append()：通过append函数给切片加元素6
 
 * append不改变原切片的值，比如下例里的append(slice, 4)并不会改变slice的值
 
@@ -242,7 +241,8 @@ func main() {
   }
   
   func change2(param *[]int) {
-  	*param = append(*param, 300) // 传切片指针，通过这种方式append可以改变外部切片的值
+      // 传切片指针，通过这种方式append可以改变外部切片的值
+  	*param = append(*param, 300) 
   }
   
   func main() {

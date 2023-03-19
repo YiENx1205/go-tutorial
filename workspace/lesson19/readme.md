@@ -58,7 +58,7 @@
 
     main end
 
-  这是因为main函数的goroutine和hello这个goroutine是并发执行的，有可能main执行完了，hello还没执行，这个时候只打印main end。有可能hello先执行完，main后执行完，也可能反过来。所以共有3种情况。
+  这是因为main函数的goroutine和hello这个goroutine是并发执行的，有可能main执行完了，hello还没执行，这个时候只打印main end。有可能hello先执行完，main的print后执行完，也可能反过来。所以共有3种情况。
 
 ### goroutine注意事项
 
@@ -98,7 +98,7 @@ func main() {
 }
 ```
 
-在for循环里，用到了goroutine和闭包，每个闭包共享变量`i`，在闭包真正执行的时候，闭包里面用到的变量**i**的值可能已经被改了，所以闭包里调用worker的时候的传参i就不是想象中的从0到9。
+在for循环里，用到了goroutine和闭包，每个闭包共享变量`i`，在闭包真正执行的时候，闭包里面用到的变量 **i** 的值可能已经被改了，所以闭包里调用worker的时候的传参i就不是想象中的从0到9。
 
 有2种方法规避
 
@@ -112,7 +112,6 @@ func main() {
       "sync"
       "time"
   )
-  
   
   func worker(id int) {
       fmt.Printf("worker %d starting\n", id)
@@ -137,9 +136,9 @@ func main() {
       fmt.Println("end")
   }
   ```
-
   
-
+  
+  
 * 方法2，在启动goroutine执行闭包前，定义一个新的变量**i**，这样每个闭包就可以用各自预期的变量值了
 
   ```go
@@ -188,7 +187,7 @@ func main() {
 
   多个goroutine之间，可以通过channel来通信，一个goroutine可以发送数据到指定channel，其它goroutine可以从这个channel里接收数据。
 
-  channel就像队列，满足FIFO原则，定义channel的时候必须指定channel要传递的元素类型。
+  **channel就像队列**，满足FIFO原则，定义channel的时候必须指定channel要传递的元素类型。
 
 * 语法：
 
@@ -196,11 +195,14 @@ func main() {
 
   ```go
   /*channel_name是变量名，data_type是通道里的数据类型
-  channel_size是channel通道缓冲区的容量，表示最多可以存放的元素个数，这个参数是可选的，不给就表示没有缓冲区，通过cap()函数可以获取channel的容量
+  channel_size是channel通道缓冲区的容量，
+  表示最多可以存放的元素个数，这个参数是可选的，
+  不给就表示没有缓冲区，通过cap()函数可以获取channel的容量
   */
-  var channel_name chan data_type = make(chan data_type, [channel_size])
+  var channel_name chan data_type 
+  	= make(chan data_type, [channel_size])
   ```
-
+  
   ```go
   var ch1 chan int 
   var ch2 chan string
@@ -215,7 +217,7 @@ func main() {
 
 ### channel三种操作
 
-channel有3种操作，发送数据，接收数据和关闭channel。发送和接收都是用`<-`符号
+channel有3种操作，**发送**数据，**接收**数据和**关闭**channel。发送和接收都是用`<-`符号
 
 * 发送值到通道：channel <- value
 
@@ -417,7 +419,8 @@ func main() {
   	go addData(ch)
   
   	/* 
-  	for循环取完channel里的值后，因为通道close了，再次获取会拿到对应数据类型的零值
+  	for循环取完channel里的值后，因为通道close了，
+  	再次获取会拿到对应数据类型的零值
   	如果通道不close，for循环取完数据后就会阻塞报错
   	*/
   	for {

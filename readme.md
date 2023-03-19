@@ -1,76 +1,72 @@
-# Learning notes for golang
-
-如果发现了本项目里的问题或者想了解本项目里还没涉及到的go语言技术栈，欢迎提交[issue](https://github.com/jincheng9/go-tutorial/issues/new)。
-
-如果觉得本项目不错，欢迎给个**Star**。
+# Learning notes for golang 
 
 ## 基础篇
 
 * [lesson0: GitHub最流行的golang-cheat-sheet中文版本](https://github.com/jincheng9/golang-cheat-sheet-cn)
 
-* [lesson1: Go程序结构](./workspace/lesson1)
+* [lesson1: Go程序结构](./workspace/lesson1/readme.md)
 
-* [lesson2: 数据类型：数字，字符串，bool](./workspace/lesson2)
+* [lesson2: 数据类型：数字，字符串，bool](./workspace/lesson2/readme.md)
 
-* [lesson3: 变量类型定义：全局变量，局部变量，多变量，零值](./workspace/lesson3)
+* [lesson3: 变量类型定义：全局变量，局部变量，多变量，零值](./workspace/lesson3/readme.md)
 
-* [lesson4: 常量和枚举](./workspace/lesson4)
+* [lesson4: 常量和枚举](./workspace/lesson4/readme.md)
 
-* [lesson5: 运算操作符](./workspace/lesson5)
+* [lesson5: 运算操作符](./workspace/lesson5/readme.md)
 
-* [lesson6: 控制语句if/switch](./workspace/lesson6)
+* [lesson6: 控制语句if/switch](./workspace/lesson6/readme.md)
 
-* [lesson7: 循环语句for/goto/break/continue](./workspace/lesson7)
+* [lesson7: 循环语句for/goto/break/continue](./workspace/lesson7/readme.md)
 
-* [lesson8: 函数，闭包和方法](./workspace/lesson8)
+* [lesson8: 函数，闭包和方法](./workspace/lesson8/readme.md)
 
-* [lesson9: 变量作用域](./workspace/lesson9)
+* [lesson9: 变量作用域](./workspace/lesson9/readme.md)
 
-* [lesson10: 数组：一维数组和多维数组](./workspace/lesson10)
+* [lesson10: 数组：一维数组和多维数组](./workspace/lesson10/readme.md)
 
-* [lesson11: 指针pointer](./workspace/lesson11)
+* [lesson11: 指针pointer](./workspace/lesson11/readme.md)
 
-* [lesson12: 结构体struct](./workspace/lesson12)
+* [lesson12: 结构体struct](./workspace/lesson12/readme.md)
 
-* [lesson13: 切片Slice](./workspace/lesson13)
+* [lesson13: 切片Slice](./workspace/lesson13/readme.md)
 
-* [lesson14: range迭代](./workspace/lesson14)
+* [lesson14: range迭代](./workspace/lesson14/readme.md)
 
-* [lesson15: map集合](./workspace/lesson15)
+* [lesson15: map集合](./workspace/lesson15/readme.md)
 
-* [lesson16: 递归函数](./workspace/lesson16)
+* [lesson16: 递归函数](./workspace/lesson16/readme.md)
 
-* [lesson17: 类型转换](./workspace/lesson17)
+* [lesson17: 类型转换](./workspace/lesson17/readme.md)
 
-* [lesson18: 接口interface](./workspace/lesson18)
+* [lesson18: 接口interface](./workspace/lesson18/readme.md)
 
-* [lesson19: 协程goroutine和管道channel](./workspace/lesson19)
+* [lesson19: 协程goroutine和管道channel](./workspace/lesson19/readme.md)
 
-* [lesson20: defer语义](./workspace/lesson20)
+* [lesson20: defer语义](./workspace/lesson20/readme.md)
 
-* [lesson21: 并发编程之sync.WaitGroup](./workspace/lesson21)
+* [lesson21: 并发编程之sync.WaitGroup](./workspace/lesson21/readme.md)
 
-* [lesson22:  并发编程之sync.Once](./workspace/lesson22)
+* [lesson22:  并发编程之sync.Once](./workspace/lesson22/readme.md)
 
-* [lesson23:  并发编程之sync.Mutex和sync.RWMutex](./workspace/lesson23)
+* [lesson23:  并发编程之sync.Mutex和sync.RWMutex](./workspace/lesson23/readme.md)
 
-* [lesson24: 并发编程之sync.Cond](./workspace/lesson24)
+* [lesson24: 并发编程之sync.Cond](./workspace/lesson24/readme.md)
 
-* [lesson25: 并发编程之sync.Map](./workspace/lesson25)
+* [lesson25: 并发编程之sync.Map](./workspace/lesson25/readme.md)
 
-* [lesson26: 并发编程之原子操作sync/atomic](./workspace/lesson26)
+* [lesson26: 并发编程之原子操作sync/atomic](./workspace/lesson26/readme.md)
 
-* [lesson27: 包Package和模块Module](./workspace/lesson27)
+* [lesson27: 包Package和模块Module](./workspace/lesson27/readme.md)
 
-* [lesson28: panic, recover运行期错误处理](./workspace/lesson28)
+* [lesson28: panic, recover运行期错误处理](./workspace/lesson28/readme.md)
 
-* [lesson29: select语义](./workspace/lesson29)
+* [lesson29: select语义](./workspace/lesson29/readme.md)
 
-* [lesson30: go单元测试](./workspace/lesson30)
+* [lesson30: go单元测试](./workspace/lesson30/readme.md)
 
-* [lesson31: go性能测试](./workspace/lesson31)
+* [lesson31: go性能测试](./workspace/lesson31/readme.md)
 
-* [lesson32: go模糊测试](./workspace/senior/p22)
+* [lesson32: go模糊测试](./workspace/senior/p22/readme.md)
 
   
 

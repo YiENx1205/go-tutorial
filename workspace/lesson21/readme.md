@@ -123,12 +123,13 @@ func main() {
         wg.Wait()
         fmt.Println("end")
     }
+    
     ```
-
+    
     程序运行时wg.Wait()会报错：fatal error: all goroutines are asleep - deadlock!
-
+    
     改为下面的传指针就正常了：
-
+    
     ```go
     package main
     

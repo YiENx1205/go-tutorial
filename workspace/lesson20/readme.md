@@ -17,7 +17,8 @@
 
   ```go
   defer func_name([parameter_list])
-  defer package_name.func_name([parameter_list]) // 例如defer fmt.Println("blabla")
+  defer package_name.func_name([parameter_list]) 
+  // 例如defer fmt.Println("blabla")
   ```
 
 * 如果在函数内调用了**多次defer**，那在函数return之前，defer的函数调用满足LIFO原则，先defer的函数后执行，后defer的函数先执行。比如在函数A内先后执行了defer f1(), defer f2(), defer f3()，那函数A return之前，会按照f3(), f2(), f1()的顺序执行，再return。
@@ -36,9 +37,7 @@ Answer：defer常用于成对的操作，比如文件打开后要关闭、锁的
   	"sync"
   )
   
-  
   var wg sync.WaitGroup
-  
   
   func sumN(N int) {
   	// 调用defer wg.Done()确保sumN执行完之后，可以对wg的计数器减1
@@ -61,8 +60,8 @@ Answer：defer常用于成对的操作，比如文件打开后要关闭、锁的
   	fmt.Println("finish")		
   }
   ```
-
-* defer结合goroutine和闭包一起使用，可以让任务函数内部不用关心Go并发里的同步原语，更多内容可以参考[goroutine](./workspace/lesson19)和[sync.WaitGroup](./workspace/lesson21)
+  
+* defer结合goroutine和闭包一起使用，可以让任务函数内部不用关心Go并发里的同步原语，更多内容可以参考[goroutine](../lesson19/readme.md)和[sync.WaitGroup](./workspace/lesson21)
 
   ```go
   package main
@@ -137,21 +136,22 @@ Answer：defer常用于成对的操作，比如文件打开后要关闭、锁的
    // f returns 42
    func f() (result int) {
    	defer func() {
-   		// result is accessed after it was set to 6 by the return statement
+   		// result is accessed after it was set to 6 
+           // by the return statement
    		result *= 7
    	}()
    	return 6
    }
    ```
-
+   
    上例中，被defer的函数func对defer语句所在的函数**f**的命名返回值result做了修改操作。
-
+   
    调用函数**f**，返回的结果是42。
-
+   
    执行顺序是函数**f**先把要返回的值6赋值给result，然后执行被defer的函数func，result被修改为42，然后函数**f**返回result，也就是返回了42。
-
+   
    官方说明如下：
-
+   
    ```go
    Each time a "defer" statement executes, the function value and parameters to
    the call are evaluated as usual and saved anew but the actual function is not 

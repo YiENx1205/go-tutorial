@@ -132,6 +132,7 @@ func main() {
       fmt.Printf("id:%d, author:%s, title:%s\n", book.id, book.author, book.title)
   }
   
+  // 这个可以改变结构体变量中的成员的值
   func (book *Book) changeTitle1() {
       book.title = "new title1"
   }

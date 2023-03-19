@@ -134,15 +134,12 @@ func main() {
   
   import "fmt"
   
-  
-  
   func buildMap(str string, m map[rune]int) {
   	/*函数内对map变量m的修改会影响main里的实参mapping*/
   	for _, value := range str {
   		m[value]++
   	}
   }
-  
   
   func main() {
   	mapping := map[rune]int{}
@@ -157,7 +154,7 @@ func main() {
   	}
   }
   ```
-
+  
   
 
 ## delete函数

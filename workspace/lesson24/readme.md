@@ -23,7 +23,7 @@ Cond结构体类型以下几个方法与其紧密相关：
 
   
 
-* Broadcast，发出广播，唤醒所有等待条件变量c的goroutine开始执行。**注意**：在调用Broadcast方法之前，要确保目标goroutine处于Wait阻塞状态，不然会出现死锁问题。
+* Broadcast，发出广播，**唤醒所有**等待条件变量c的goroutine开始执行。**注意**：在调用Broadcast方法之前，要确保目标goroutine处于Wait阻塞状态，不然会出现死锁问题。
 
   ```go
   func (c *Cond) Broadcast()
@@ -31,7 +31,7 @@ Cond结构体类型以下几个方法与其紧密相关：
 
   
 
-* Signal，发出信号，唤醒某一个等待条件变量c的goroutine开始执行。**注意**：在调用Signal方法之前，要确保目标goroutine处于Wait阻塞状态，不然会出现死锁问题。
+* Signal，发出信号，**唤醒某一个**等待条件变量c的goroutine开始执行。**注意**：在调用Signal方法之前，要确保目标goroutine处于Wait阻塞状态，不然会出现死锁问题。
 
   ```go
   func (c *Cond) Signal()
@@ -81,9 +81,11 @@ func main() {
             cond.L.Lock()
             fmt.Printf("%d ready\n", i)
             /*Wait实际上是会先解锁cond.L，再阻塞当前goroutine
-            这样其它goroutine调用上面的cond.L.Lock()才能加锁成功，才能进一步执行到Wait方法，
+            这样其它goroutine调用上面的cond.L.Lock()才能加锁成功，
+            才能进一步执行到Wait方法，
             等待被Broadcast或者signal唤醒。
-            Wait被Broadcast或者Signal唤醒的时候，会再次对cond.L加锁，加锁后Wait才会return
+            Wait被Broadcast或者Signal唤醒的时候，会再次对cond.L加锁，
+            加锁后Wait才会return
             */
             cond.Wait()
             fmt.Printf("%d done\n", i)

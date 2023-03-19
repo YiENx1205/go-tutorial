@@ -48,9 +48,9 @@
 
 * 默认情况下每个case分支最后自带break效果，匹配成功就不会执行其它case。
 
-  如果需要执行后面的case，可以使用fallthrough。
+  如果需要执行后面的case，可以使用**fallthrough**。
 
-  使用 fallthrough 会强制执行紧接着的下一个 case 语句，不过fallthrough 不会去分析紧接着的下一条 case 的表达式结果是否满足条件，而是直接执行case里的语句块。
+  使用 fallthrough 会强制执行紧接着的下一个 case 语句，不过fallthrough **不会去分析紧接着的下一条 case 的表达式结果是否满足条件**，而是**直接执行case里的语句块**。
 
   ```go
   // Foo prints and returns n.

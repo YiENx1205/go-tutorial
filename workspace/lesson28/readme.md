@@ -4,7 +4,7 @@ panic和recover是Go的2个内置函数，用于程序运行期抛出异常(pani
 
 ## panic
 
-引发panic可以是程序显式调用panic函数，也可以是运行期错误，比如数组越界访问，除0等。
+引发panic可以是程序显式调用panic函数，也可以是**运行期错误**，比如数组越界访问，除0等。
 
 * 定义
 
@@ -112,6 +112,7 @@ recover是Go的内置函数，可以捕获panic异常。recover必须结合defer
       }()
       fmt.Println("Calling g.")
       g(0)
+      // recover不是在被defer的函数里面被直接调用执行
       fmt.Println("Returned normally from g.")
   }
   
@@ -125,10 +126,27 @@ recover是Go的内置函数，可以捕获panic异常。recover必须结合defer
       g(i + 1)
   }
   ```
-
+  
   大家可以下载[recover2.go](./recover2.go)代码，本地运行看看结果是否和预期相符。
 
+- 执行结果
 
+	```shell
+	Calling g.
+	Printing in g 0
+	Printing in g 1
+	Printing in g 2
+	Printing in g 3
+	Panicking!
+	Defer in g 3
+	Defer in g 2
+	Defer in g 1
+	Defer in g 0
+	Recovered in f 4         # 在这个函数结束就执行了recover
+	Returned normally from f.
+	```
+
+	
 
 ## References
 

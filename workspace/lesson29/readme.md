@@ -14,7 +14,7 @@ select语义是和channel绑定在一起使用的，select可以实现从多个c
 
 如果select里任何case和default分支都没有，就会一直阻塞。
 
-如果多个case同时满足，select会随机选一个case执行。
+- 如果多个case同时满足，select会随机选一个case执行，其他的不执行。
 
 ## 语法
 
@@ -33,7 +33,7 @@ func d() {
 }
 ```
 
-语法上和[switch](../lesson6)的一些区别：
+语法上和[switch](../lesson6/readme.md)的一些区别：
 
 * select关键字和后面的{ 之间，不能有表达式或者语句。
 * 没有fallthrough语句
