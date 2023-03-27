@@ -12,7 +12,7 @@ package package_name
 
 package的代码结构示例如下：
 
-![image-20211104181754164](./img/package_structure.jpg)
+<img src="./img/package_structure.jpg" alt="image-20211104181754164"  />
 
 package里的变量、函数、结构体、方法等如果要被本package外的程序引用，需要在命名的时候首字母大写。
 

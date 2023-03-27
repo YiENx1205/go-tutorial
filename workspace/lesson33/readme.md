@@ -1,4 +1,4 @@
-## 函数式编程Functional Options
+# 函数式编程Functional Options
 
 [参考](https://coolshell.cn/articles/21146.html)
 

@@ -127,7 +127,6 @@ recover是Go的内置函数，可以捕获panic异常。recover必须结合defer
   }
   ```
   
-  大家可以下载[recover2.go](./recover2.go)代码，本地运行看看结果是否和预期相符。
 
 - 执行结果
 
