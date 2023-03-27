@@ -397,3 +397,12 @@
 
   * 如果把一个结构体变量赋值给interface变量，那结构体需要实现interface里的所有方法，否则会编译报错：xx does not implement yy，表示结构体xx没有实现接口yy
 
+# 注意
+
+```go
+//T is a struct
+var _ I = T{}       // Verify that T implements I.
+var _ I = (*T)(nil) // Verify that *T implements I.
+```
+
+其中，`I` 是接口，`T` 是结构体，上述代码说明，`T` 必须实现接口 `I`，否则编译不通过，可以提醒用户使用。
